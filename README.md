@@ -151,6 +151,6 @@ strace -o trace_mem.txt ./Memory_Files/bin/mem_cpu_bound
 ## 👨‍💼 Autores
 
 - Miguel Filippo Calhabeu, Marlon Mota, Raiad Scaggion
-- Disciplina: Sistemas Operacionais
+- Disciplina: SSC0541 - Sistemas Operacionais I
 - Curso: Bacharelado em Sistemas de Informação - ICMC
 - 1º semestre de 2025
