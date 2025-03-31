@@ -24,7 +24,7 @@ checkpoint_1/
 │   ├── data                   # Arquivo de entrada para os testes de backup
 │   ├── cpu_backup             # Arquivo gerado pelo backup CPU-bound
 │   └── io_backup              # Arquivo gerado pelo backup I/O-bound
-├── Memory_Files/
+├── Memory/
 │   ├── bin/                   # Binário compilado da aplicação de memória
 │   └── src/                   # Código-fonte utilizando mmap, munmap, getpagesize
 ├── Process/
@@ -94,7 +94,7 @@ Dois programas foram criados:
 
 ### 🧠 Memória
 
-Local: `Memory_Files/src/`
+Local: `Memory/src/`
 
 Chamadas de sistema utilizadas:
 
@@ -127,7 +127,7 @@ O programa `process_manager.c` ilustra a criação de dois filhos, cada um execu
 ```bash
 ./Process/bin/process_manager
 ./IO_Files/bin/io_primitives_iobound ./IO_Files/data ./IO_Files/io_backup
-./Memory_Files/bin/mem_cpu_bound
+./Memory/bin/mem_cpu_bound
 ```
 
 ### 📊 Execução com `/usr/bin/time`
@@ -135,7 +135,7 @@ O programa `process_manager.c` ilustra a criação de dois filhos, cada um execu
 ```bash
 /usr/bin/time -v ./Process/bin/process_manager
 /usr/bin/time -v ./IO_Files/bin/io_primitives_iobound ./IO_Files/data ./IO_Files/io_backup
-/usr/bin/time -v ./Memory_Files/bin/mem_cpu_bound
+/usr/bin/time -v ./Memory/bin/mem_cpu_bound
 ```
 
 ### 🔍 Execução com `strace`
@@ -143,7 +143,7 @@ O programa `process_manager.c` ilustra a criação de dois filhos, cada um execu
 ```bash
 strace -f -o trace_process.txt ./Process/bin/process_manager
 strace -o trace_io.txt ./IO_Files/bin/io_primitives_iobound ./IO_Files/data ./IO_Files/io_backup
-strace -o trace_mem.txt ./Memory_Files/bin/mem_cpu_bound
+strace -o trace_mem.txt ./Memory/bin/mem_cpu_bound
 ```
 
 ---
